@@ -41,11 +41,14 @@ li{
 	background-size:100% 100%;
 	position: absolute;
 	margin-left: 42%;
-	margin-top: 50%;
+	margin-top: 22%;
 	transform: translateX(-50%);
 	transform-style:preserve-3d;
 	transform:rotateX(13deg);
 	animation:move 30s linear infinite;
+}
+.box.mb {
+	margin-top: 50%;
 }
 .minbox{
 	width:200px;
@@ -699,6 +702,10 @@ li{
 </div>
 <script>
   $(document).ready(function () {
+		if (window.innerWidth < 1000) {
+			document.querySelector('.box').classList.add('mb')
+		}
+		
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', $('.active-song').attr('data-src'));
 
@@ -801,6 +808,7 @@ li{
     });
 
 });
+
   </script>
 </body>
 </html>
